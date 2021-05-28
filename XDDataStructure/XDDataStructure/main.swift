@@ -7,6 +7,11 @@
 
 import Foundation
 
-let arr = ArrayList<Int>()
+//let arr = ArrayList<Int>()
 
+
+//
+let linkedList = SingleLinnkedList<Int>()
+linkedList.append(value: 7)
+print(linkedList.size)
 

