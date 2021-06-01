@@ -7,7 +7,8 @@
 
 import Foundation
 
-//let arr = ArrayList<Int>()
+let arr = ArrayList<Int>(capaticy: 20)
+print(arr.size())
 
 
 //
