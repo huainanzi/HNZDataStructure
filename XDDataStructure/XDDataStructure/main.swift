@@ -7,9 +7,14 @@
 
 import Foundation
 
-let arr = ArrayList<Int>(capaticy: 20)
-print(arr.size())
-
+var arr = ArrayList<Int>(capaticy: 20)
+arr.add(ele: 7)
+arr.add(ele: 9)
+arr.add(index: 0, ele: 99)
+//arr.add(ele: 9)
+//arr.add(ele: 3)
+print(arr.indexOf(ele: 7))
+print(arr.description())
 
 //
 let linkedList = SingleLinnkedList<Int>()
