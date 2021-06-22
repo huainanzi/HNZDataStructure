@@ -36,6 +36,9 @@ class SingleLinnkedList<T:Hashable> {
     /// - Returns:
     func contains(ele:T) -> Bool {
         var node = head
+        if node?.value == ele {
+            return true
+        }
         while let n = node?.next  {
             if n.value == ele {
                 return true
@@ -65,16 +68,12 @@ class SingleLinnkedList<T:Hashable> {
     /// 获取某位置的元素
     /// - Parameter index:
     /// - Returns:
-    func get(index:Int) -> SingleLinkedListNode<T>? {
+    func get(index:Int) -> T? {
         if index<0 || index >= count {
             return nil
         }
-        var node = head
-        for _ in 0...index-1 {
-            node = node?.next
-        }
-        
-        return node
+        let n = node(atIndex: index)
+        return n?.value
     }
     
     
@@ -83,22 +82,94 @@ class SingleLinnkedList<T:Hashable> {
     ///   - index:
     ///   - ele:
     /// - Returns:
-    func set(index:Int,ele:T) -> SingleLinkedListNode<T>? {
+    func set(index:Int,ele:T) -> T? {
         if index < 0 || index >= count {
             return nil
         }
+        let n = node(atIndex: index)
+        let old = n?.value
+        n?.value = ele
+        return old
+    }
+    
+    /// 获取某位置的节点
+    /// - Parameter atIndex:
+    /// - Returns:
+    func node(atIndex:Int) -> SingleLinkedListNode<T>? {
+        if atIndex < 0 || atIndex >= count {
+            return nil
+        }
+        var node = head
+        if atIndex == 0 {
+            return node
+        }
+        for _ in 1 ... atIndex {
+            node = node?.next
+        }
+        return node
+    }
+    
+    /// 插入节点
+    /// - Parameters:
+    ///   - index:
+    ///   - ele: 
+    func add(index:Int,ele:T) {
+        if index < 0 || index>count {
+            return
+        }
         let newNode = SingleLinkedListNode(value: ele)
         if index == 0 {
-            let pre = head
-            newNode.next = head?.next
+            newNode.next = head
             head = newNode
-            return pre
+            count += 1
+            return
         }
-        var node = get(index: index-1)
-        let pre = node?.next
-        node?.next = newNode
+        let n = node(atIndex: index-1)
+        newNode.next = n?.next
+        n?.next = newNode
+        count += 1
+    }
+    
+    /// 删除某位置的节点
+    /// - Parameter index: 
+    func remove(index:Int) {
+        if index < 0 || index >= count {
+            return
+        }
+        if index == 0 {
+            head = head?.next
+            count -= 1
+            return
+        }
+        let n = node(atIndex: index-1)
+        n?.next = n?.next?.next
+    }
+    
+    /// 获取某元素的位置
+    /// - Parameter ele:
+    /// - Returns:
+    func indexOf(ele:T) -> Int {
+        if isEmpty() {
+            return -1
+        }
+        var node = head
+        if node?.value == ele {
+            return 0
+        }
+        for index in 1...count-1 {
+            node = node?.next
+            if node?.value == ele {
+                return index
+            }
+        }
         
-        return pre
+        return -1
+    }
+    
+    /// 清空链表
+    func clear() {
+        head = nil
+        count = 0
     }
     
     func description() -> String {
@@ -118,4 +189,5 @@ class SingleLinnkedList<T:Hashable> {
         
         return str
     }
+    
 }

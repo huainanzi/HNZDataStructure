@@ -20,5 +20,10 @@ import Foundation
 //
 var linkedList = SingleLinnkedList<Int>()
 linkedList.add(ele: 8)
-print(linkedList.get(index: 0)?.value)
+linkedList.add(ele: 5)
+linkedList.add(ele: 7)
+linkedList.add(ele: 98)
+linkedList.add(index: 0, ele: 10)
+
+print(linkedList.indexOf(ele: 7))
 print(linkedList.description())
